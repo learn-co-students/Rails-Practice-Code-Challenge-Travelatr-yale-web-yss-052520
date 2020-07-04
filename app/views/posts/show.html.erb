@@ -1,0 +1,10 @@
+<%= content_tag(:h1, @post.title)%>
+<%= content_tag(:h2, "Content:")%> <br>
+<%= @post.content%>
+<%= button_to( "Edit the Post!", {action: 'edit', id: @post.id}, method: :get)%>
+<%= content_tag(:h2, "Author:")%>
+<%=link_to(@post.blogger.name, blogger_path(@post.blogger))%>
+ <%= content_tag(:h2, "Destination: ")%>
+ <%=link_to(@post.destination.name, destination_path(@post.destination))%>
+ <%= content_tag(:h3, "Number of Likes: #{@post.likes}")%>
+ <%= button_to( "Like the Post!", {action: 'likes', id: @post.id})%>

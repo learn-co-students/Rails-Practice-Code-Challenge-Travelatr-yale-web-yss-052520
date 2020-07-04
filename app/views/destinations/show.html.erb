@@ -1,0 +1,13 @@
+<%= content_tag(:h1, @destination.name)%>
+<br>
+<%= content_tag(:h2, "5 Most Recent Posts")%>
+<%= "No Posts Yet" if @destination.five_most_recent_posts.empty?%>
+<%@destination.five_most_recent_posts.each {|post|%>
+    <%= post.title%>
+<%}%>
+<%= content_tag(:h2, "Featured Post:")%> <br>
+<%= @destination.most_liked_post ? 
+        link_to(@destination.most_liked_post.title, 
+                    post_path(@destination.most_liked_post)) : 
+        "No Post Yet"%>
+<%= content_tag(:h2, "Average Poster's Age: #{@destination.average_age}")%>

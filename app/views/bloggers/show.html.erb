@@ -1,0 +1,13 @@
+<%= content_tag(:h1, "#{@blogger.name}'s Profile")%>
+
+<%= content_tag(:h2, "Total Likes: #{@blogger.total_likes}")%>
+<br>
+<%= content_tag(:h2, "Featured Post:")%>
+<%= @favorite_post ? link_to(@favorite_post.title, post_path(@favorite_post)) : "No Posts Yet"%>
+<br>
+<%= content_tag(:h2, "Top 5 Destinations:")%>
+<ol>
+    <%@blogger.top_five_destinations.each {|dest|%>
+    <li> <%= dest%> </li>
+    <%}%>
+</ol>

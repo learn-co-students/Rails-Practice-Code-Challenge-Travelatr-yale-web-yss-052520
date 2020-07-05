@@ -1,0 +1,30 @@
+<h1> New Post </h1>
+<% if flash[:errors] %>
+<ul>
+<% flash[:errors].each do |error| %>
+    <li>
+        <%= error %>
+    </li>
+<% end %>    
+</ul>
+<% end %>
+
+
+<%= form_for @post do |f| %>
+    <%= f.label :title %> <br>
+    <%= f.text_field :title %> <br>
+
+    <%= f.label :content %> <br>
+    <%= f.text_field :content %> <br>
+
+    <%= f.label :likes %> <br>
+    <%= f.number_field :likes %> <br>
+
+    <%= f.label :blogger %> <br>
+    <%= f.collection_select :blogger_id, @bloggers, :id, :name %> <br>
+
+    <%= f.label :destination %> <br>
+    <%= f.collection_select :destination_id, @destinations, :id, :name %> <br>
+ 
+ <%= f. submit %> 
+ <% end %>  

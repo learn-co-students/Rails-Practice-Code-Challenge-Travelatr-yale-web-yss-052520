@@ -1,0 +1,8 @@
+<h1> All Bloggers </h1>
+
+<h4> Average Blogger Age <%= @age %> </h4>
+<ul>
+    <% @bloggers.each do |blogger| %>
+        <li><%= link_to blogger.name, blogger_path(blogger) %></li>
+    <% end %>
+</ul>    

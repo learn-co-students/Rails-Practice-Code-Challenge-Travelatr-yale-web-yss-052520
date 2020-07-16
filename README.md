@@ -14,7 +14,6 @@ We envision a relationship between our models as follows:
 
 Blogger -< Post >- Destination
 
-
 For each model, we have a specific vision in mind:
 
 Blogger:
